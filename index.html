@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Desa Bapangi </title>
+<link rel="icon" href="assets/img/favicon.png"
+<meta name="description" content="Website resmi Profil Desa Bapangi, Kecamatan Panca Lautang, Kabupaten Sidenreng Rappang, Sulawesi Selatan. Informasi pemerintahan, potensi, program, dan layanan desa." >
+
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          green: { 50:'#F2F8F4', 100:'#E4F0E8', 500:'#3E8B63', 600:'#2B7A4F', 700:'#1B5E3F', 800:'#14321F', 900:'#10281B' },
+          gold: { 400:'#F3CE5F', 500:'#E8B930', 600:'#C9931B' },
+          cream: '#FBF9F3',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'ui-serif', 'serif'],
+          sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        },
+        borderRadius: { xl2: '22px' },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-cream text-ink font-sans antialiased">
+
+<!-- Loader -->
+<div id="loader"><div class="loader-mark" role="status" aria-label="Memuat"></div></div>
+
+<!-- ============ HEADER / STICKY NAV ============ -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-white/90 dark:bg-green-900/90 backdrop-blur-md py-4 transition-all duration-300 border-b border-green-100 dark:border-green-800">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between">
+    <a href="#beranda" class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center flex-shrink-0">
+        <img src="assets/img/favicon.png" alt="Logo Kabupaten Sidenreng Rappang" class="w-full h-full object-contain p-1.5" />
+      </div>
+      <div class="leading-tight">
+        <p class="font-display font-bold text-green-800 dark:text-cream text-lg">Desa Bapangi</p>
+        <p class="text-[11px] tracking-wide text-ink-soft uppercase">Panca Lautang · Sidrap</p>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-ink">
+      <a href="#beranda" class="nav-link">Beranda</a>
+      <a href="#profil" class="nav-link">Profil Desa</a>
+      <a href="#pemerintahan" class="nav-link">Pemerintahan</a>
+      <a href="#potensi" class="nav-link">Potensi</a>
+      <a href="#program" class="nav-link">Program</a>
+      <a href="#layanan" class="nav-link">Layanan</a>
+      <a href="#kontak" class="nav-link">Kontak</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button data-theme-toggle aria-label="Ganti tema" class="w-10 h-10 rounded-full flex items-center justify-center text-green-700 dark:text-gold-400 hover:bg-green-100 dark:hover:bg-green-800 transition">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun hidden"></i>
+      </button>
+      <a href="#kontak" class="hidden sm:inline-flex btn-gold px-5 py-2.5 rounded-full text-sm">Hubungi Kami</a>
+      <button id="menu-btn" aria-label="Buka menu" aria-expanded="false" class="lg:hidden w-10 h-10 rounded-full flex items-center justify-center text-green-700 dark:text-cream hover:bg-green-100 dark:hover:bg-green-800 transition">
+        <i class="fa-solid fa-bars icon-open"></i>
+        <i class="fa-solid fa-xmark icon-close hidden"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-nav lg:hidden max-h-0 overflow-hidden transition-all duration-300 px-5">
+    <nav class="flex flex-col gap-1 pt-4 pb-2 text-sm font-semibold text-ink">
+      <a href="#beranda" class="py-2.5 border-b border-green-100 dark:border-green-800">Beranda</a>
+      <a href="#profil" class="py-2.5 border-b border-green-100 dark:border-green-800">Profil Desa</a>
+      <a href="#pemerintahan" class="py-2.5 border-b border-green-100 dark:border-green-800">Pemerintahan</a>
+      <a href="#potensi" class="py-2.5 border-b border-green-100 dark:border-green-800">Potensi Desa</a>
+      <a href="#program" class="py-2.5 border-b border-green-100 dark:border-green-800">Program Desa</a>
+      <a href="#layanan" class="py-2.5 border-b border-green-100 dark:border-green-800">Layanan</a>
+      <a href="#kontak" class="py-2.5 border-b border-green-100 dark:border-green-800">Contact Center</a>
+      <a href="#faq" class="py-2.5">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section id="beranda" class="hero-wrap relative flex items-center pt-28 pb-24">
+  <div class="hero-topo"></div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10 w-full">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <span class="chip bg-white/10 !text-gold-400 border border-gold-500/40 backdrop-blur-sm">Website Resmi Pemerintah Desa</span>
+      <h1 class="font-display font-black text-white text-4xl sm:text-5xl lg:text-6xl mt-5 leading-[1.08]">
+        Desa Bapangi,<br class="hidden sm:block"> Sejuk oleh Sawah,<br class="hidden sm:block"> Kuat oleh Gotong Royong.
+      </h1>
+      <p class="text-white/85 text-base sm:text-lg mt-5 max-w-xl">
+        Kecamatan Panca Lautang, Kabupaten Sidenreng Rappang, Sulawesi Selatan — desa agraris dengan hamparan jagung dan padi, serta masyarakat yang menjunjung tinggi kebersamaan.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="#kontak" class="btn-gold px-6 py-3.5 rounded-full text-sm inline-flex items-center gap-2">
+          <i class="fa-solid fa-phone"></i> Hubungi Kami
+        </a>
+        <a href="#potensi" class="btn-outline-white px-6 py-3.5 rounded-full text-sm inline-flex items-center gap-2">
+          <i class="fa-solid fa-seedling"></i> Lihat Potensi Desa
+        </a>
+      </div>
+    </div>
+
+    <!-- Sambutan Kepala Desa -->
+    <div data-aos="fade-up" data-aos-delay="150" class="mt-14 max-w-xl bg-white/10 border border-white/15 backdrop-blur-md rounded-xl2 p-5 sm:p-6 flex gap-4 items-start">
+      <img src="assets/img/WhatsApp_Image_2026-07-13_at_10_53_37.jpeg" alt="Kepala Desa Bapangi" class="w-16 h-16 rounded-full object-cover ring-2 ring-gold-500 flex-shrink-0" />
+      <div>
+        <p class="text-white/90 text-sm italic leading-relaxed">"Selamat datang di kanal informasi resmi Desa Bapangi. Semoga website ini mempermudah masyarakat mengakses layanan dan mengenal potensi desa kita bersama."</p>
+        <!-- Nama berdasarkan data publik terkini; mohon verifikasi/perbarui dengan data resmi Kantor Desa Bapangi -->
+        <p class="text-gold-400 font-bold text-sm mt-3">Rusnah Tappa</p>
+        <p class="text-white/60 text-xs">Kepala Desa Bapangi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATISTIK ============ -->
+<section class="bg-cream pt-16 relative z-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pb-16">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div data-aos="fade-up" class="card p-6 text-center">
+        <i class="fa-solid fa-people-group text-green-600 dark:text-gold-400 text-2xl mb-2"></i>
+        <p class="stat-num text-3xl sm:text-4xl font-bold text-green-800 dark:text-cream"><span data-count="1472">0</span></p>
+        <p class="text-xs text-ink-soft mt-1 uppercase tracking-wide">Jumlah Penduduk</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100" class="card p-6 text-center">
+        <i class="fa-solid fa-map-location-dot text-green-600 dark:text-gold-400 text-2xl mb-2"></i>
+        <p class="stat-num text-3xl sm:text-4xl font-bold text-green-800 dark:text-cream"><span data-count="3">0</span></p>
+        <p class="text-xs text-ink-soft mt-1 uppercase tracking-wide">Dusun</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="card p-6 text-center">
+        <i class="fa-solid fa-mountain-sun text-green-600 dark:text-gold-400 text-2xl mb-2"></i>
+        <p class="stat-num text-3xl sm:text-4xl font-bold text-green-800 dark:text-cream"><span data-count="2045" data-decimals="2" data-suffix=" Ha">0</span></p>
+        <p class="text-xs text-ink-soft mt-1 uppercase tracking-wide">Luas Wilayah</p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="300" class="card p-6 text-center">
+        <i class="fa-solid fa-house-chimney text-green-600 dark:text-gold-400 text-2xl mb-2"></i>
+        <p class="stat-num text-3xl sm:text-4xl font-bold text-green-800 dark:text-cream"><span data-count="3">0</span>/<span data-count="2">0</span></p>
+        <p class="text-xs text-ink-soft mt-1 uppercase tracking-wide">Jumlah RT / RW</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFIL DESA ============ -->
+<section id="profil" class="py-20 lg:py-28 bg-white dark:bg-green-900/40">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <span class="section-eyebrow text-xs font-bold tracking-[0.2em] uppercase">Mengenal Desa Kami</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-green-800 dark:text-cream mt-3">Profil Desa Bapangi</h2>
+      <div class="contour-rule w-24 mt-4"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div data-aos="fade-right" class="space-y-8">
+        <div>
+          <h3 class="font-display font-bold text-xl text-green-700 dark:text-gold-400 flex items-center gap-2"><i class="fa-solid fa-scroll text-gold-500"></i> Sejarah Desa</h3>
+          <p class="text-ink-soft mt-2 leading-relaxed text-sm sm:text-base">Desa Bapangi berasal dari kata “Bapangi” yang berarti “tempat berkumpulnya orang-orang dari berbagai dusun (tempat) untuk makan-makan”, istilahnya “Makan Sayur” karena daerah ini dikenal dengan kesuburan tanaman palawija dan ketelanya yang terkenal harum (Wangi), aroma masakan yang membangkitkan selera. Desa Bapangi merupakan gabungan dari pecahan 2 desa dan 1 kelurahan yaitu: •	Dusun Bingkulu adalah pecahan dari Kelurahan Bilokka
+•	Dusun Bapangi adalah pecahan dari Desa Wanio Wattang
+•	Dusun Padaelo adalah pecahan dari Desa Wanio Timoreng
+Desa Bapangi pada tahun 1996 sampai tahun 1998 di persiapkan menjadi Desa Persiapan, sebagai Kepala Desa Persiapan adalah Bapak Ruslan Ks Tawe. 
+Masa peralihan dari desa persipan menjadi Desa Definitif dijabat oleh Bapak Jamaluddin Tahir. Pada tahun 1998 Desa Bapangi menjadi Desa Definitif dan yang menjadi Kepala Desa pertama adalah Andi Panca Iskandar.
+</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-display font-bold text-lg text-green-700 dark:text-gold-400 flex items-center gap-2"><i class="fa-solid fa-eye text-gold-500"></i> Visi</h3>
+            <p class="text-ink-soft mt-2 text-sm leading-relaxed">Terwujudnya Desa Bapangi yang mandiri, sejahtera, dan berbudaya melalui pertanian yang maju dan pelayanan publik yang transparan.</p>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-green-700 dark:text-gold-400 flex items-center gap-2"><i class="fa-solid fa-flag text-gold-500"></i> Misi</h3>
+            <ul class="text-ink-soft mt-2 text-sm leading-relaxed space-y-1.5 list-disc list-inside">
+              <li>Meningkatkan produktivitas pertanian &amp; UMKM</li>
+              <li>Memperkuat pelayanan administrasi desa</li>
+              <li>Menjaga gotong royong &amp; nilai keagamaan</li>
+              <li>Membangun infrastruktur yang merata</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-display font-bold text-lg text-green-700 dark:text-gold-400 flex items-center gap-2"><i class="fa-solid fa-location-dot text-gold-500"></i> Letak Geografis</h3>
+            <p class="text-ink-soft mt-2 text-sm leading-relaxed">Desa Bapangi merupakan salah satu dari tujuh desa di wilayah Kecamatan Panca Lautang, Kabupaten Sidenreng Rappang, berada pada dataran rendah yang subur dan dikelilingi area persawahan serta perkebunan jagung.</p>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-green-700 dark:text-gold-400 flex items-center gap-2"><i class="fa-solid fa-border-all text-gold-500"></i> Batas Wilayah</h3>
+            <!-- CONTOH — mohon sesuaikan arah mata angin & nama desa berbatasan dengan data resmi dari Kantor Desa Bapangi -->
+            <ul class="text-ink-soft mt-2 text-sm leading-relaxed space-y-1">
+              <li><span class="font-semibold text-ink">Utara</span> — Desa Wanio</li>
+              <li><span class="font-semibold text-ink">Selatan</span> — Desa Cenrana</li>
+              <li><span class="font-semibold text-ink">Timur</span> — Kabupaten Soppeng</li>
+              <li><span class="font-semibold text-ink">Barat</span> — Desa Wanio</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-display font-bold text-lg text-green-700 dark:text-gold-400 flex items-center gap-2"><i class="fa-solid fa-cloud-sun text-gold-500"></i> Kondisi Alam</h3>
+            <p class="text-ink-soft mt-2 text-sm leading-relaxed">Beriklim tropis dengan dua musim, tanah subur untuk tanaman pangan, serta sumber air dari saluran irigasi persawahan.</p>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg text-green-700 dark:text-gold-400 flex items-center gap-2"><i class="fa-solid fa-user-group text-gold-500"></i> Mata Pencaharian</h3>
+            <p class="text-ink-soft mt-2 text-sm leading-relaxed">Mayoritas warga bekerja sebagai petani jagung &amp; padi, peternak, perajin batu bata, serta pelaku UMKM rumahan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" class="space-y-6">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop" alt="Hamparan sawah Desa Bapangi" class="rounded-xl2 shadow-soft w-full h-72 object-cover" />
+        <div class="rounded-xl2 overflow-hidden shadow-soft border border-green-100 dark:border-green-800">
+          <iframe
+            title="Peta Lokasi Desa Bapangi"
+            src="https://www.google.com/maps?q=Bapangi,+Kec.+Panca+Lautang,+Kabupaten+Sidenreng+Rappang,+Sulawesi+Selatan&z=16&output=embed"
+            width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PEMERINTAHAN DESA ============ -->
+<section id="pemerintahan" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <span class="section-eyebrow text-xs font-bold tracking-[0.2em] uppercase">Struktur Organisasi</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-green-800 dark:text-cream mt-3">Pemerintahan Desa</h2>
+      <div class="contour-rule w-24 mt-4"></div>
+    </div>
+
+    <!-- Kepala Desa — satu-satunya kartu yang memakai foto -->
+    <div id="kepala-desa-spotlight" class="mb-8"></div>
+
+    <!-- Aparatur lainnya — tanpa foto, memakai avatar inisial -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="aparatur-grid"></div>
+  </div>
+</section>
+
+<!-- ============ POTENSI DESA ============ -->
+<section id="potensi" class="py-20 lg:py-28 bg-green-800 dark:bg-green-900 relative overflow-hidden">
+  <div class="hero-topo opacity-40"></div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <span class="text-xs font-bold tracking-[0.2em] uppercase text-gold-400">Kekayaan Lokal</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-3">Potensi Desa</h2>
+      <div class="contour-rule w-24 mt-4"></div>
+      <p class="text-white/70 mt-4 text-sm sm:text-base">Sektor unggulan yang menopang perekonomian masyarakat Desa Bapangi.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="potensi-grid"></div>
+  </div>
+</section>
+
+<!-- ============ PROGRAM DESA ============ -->
+<section id="program" class="py-20 lg:py-28 bg-white dark:bg-green-900/40">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <span class="section-eyebrow text-xs font-bold tracking-[0.2em] uppercase">Kerja Bersama</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-green-800 dark:text-cream mt-3">Program Desa</h2>
+      <div class="contour-rule w-24 mt-4"></div>
+      <p class="text-ink-soft mt-4 text-sm sm:text-base">Program aktif yang dijalankan pemerintah desa bersama masyarakat dan mahasiswa KKN.</p>
+    </div>
+
+    <div class="relative pl-8" id="program-list">
+      <div class="absolute left-[11px] top-2 bottom-2 w-0.5 timeline-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAYANAN ============ -->
+<section id="layanan" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <span class="section-eyebrow text-xs font-bold tracking-[0.2em] uppercase">Administrasi Warga</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-green-800 dark:text-cream mt-3">Layanan Desa</h2>
+      <div class="contour-rule w-24 mt-4"></div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="layanan-grid"></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT CENTER ============ -->
+<section id="kontak" class="py-20 lg:py-28 bg-green-800 dark:bg-green-900 relative overflow-hidden">
+  <div class="hero-topo opacity-30"></div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
+    <div class="max-w-2xl mb-14" data-aos="fade-up">
+      <span class="text-xs font-bold tracking-[0.2em] uppercase text-gold-400">Kami Siap Membantu</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mt-3">Contact Center</h2>
+      <div class="contour-rule w-24 mt-4"></div>
+      <p class="text-white/70 mt-4 text-sm sm:text-base">Hubungi Kantor Desa Bapangi melalui kanal berikut untuk pertanyaan, pengaduan, atau permohonan layanan.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8">
+      <div class="lg:col-span-2 space-y-4" data-aos="fade-right">
+        <div class="bg-white/10 border border-white/15 backdrop-blur-md rounded-xl2 p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#25D366]/20 text-[#25D366] flex items-center justify-center text-xl flex-shrink-0"><i class="fa-brands fa-whatsapp"></i></div>
+          <div>
+            <p class="text-white/60 text-xs uppercase tracking-wide">WhatsApp Kantor Desa</p>
+            <p class="text-white font-bold">+62 899-891-3642</p>
+          </div>
+        </div>
+        <div class="bg-white/10 border border-white/15 backdrop-blur-md rounded-xl2 p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <p class="text-white/60 text-xs uppercase tracking-wide">Email Desa</p>
+            <p class="text-white font-bold break-all">contohemail@gmail.com</p>
+          </div>
+        </div>
+        <div class="bg-white/10 border border-white/15 backdrop-blur-md rounded-xl2 p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <p class="text-white/60 text-xs uppercase tracking-wide">Telepon Kantor</p>
+            <p class="text-white font-bold">(+62) 899-891-3642</p>
+          </div>
+        </div>
+        <div class="bg-white/10 border border-white/15 backdrop-blur-md rounded-xl2 p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <p class="text-white/60 text-xs uppercase tracking-wide">Lokasi Kantor</p>
+            <p class="text-white font-bold">Kantor Desa Bapangi, Kec. Panca Lautang, Kab. Sidrap</p>
+          </div>
+        </div>
+        <div class="bg-white/10 border border-white/15 backdrop-blur-md rounded-xl2 p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <p class="text-white/60 text-xs uppercase tracking-wide">Jam Operasional</p>
+            <p class="text-white font-bold">Senin – Jumat, 08.00 – 15.00 WITA</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="https://wa.me/628998913642" target="_blank" rel="noopener" class="flex-1 min-w-[160px] text-center bg-[#25D366] text-white font-bold px-5 py-3 rounded-full text-sm hover:brightness-110 transition inline-flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp"></i> Hubungi via WhatsApp
+          </a>
+          <a href="mailto:hamzahkassim22@gmail.com" class="flex-1 min-w-[160px] text-center btn-gold px-5 py-3 rounded-full text-sm inline-flex items-center justify-center gap-2">
+            <i class="fa-solid fa-envelope"></i> Kirim Email
+          </a>
+          <a href="https://www.google.com/maps/place/Bapangi,+Kec.+Panca+Lautang,+Kabupaten+Sidenreng+Rappang,+Sulawesi+Selatan/data=!4m2!3m1!1s0x2d95c1dc83dc2cc1:0x3c857bd6ed94220e" target="_blank" rel="noopener" class="flex-1 min-w-[160px] text-center btn-outline-white px-5 py-3 rounded-full text-sm inline-flex items-center justify-center gap-2">
+            <i class="fa-solid fa-map-location-dot"></i> Lihat Lokasi
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 rounded-xl2 overflow-hidden shadow-soft border border-white/10" data-aos="fade-left">
+        <iframe
+          title="Peta Kantor Desa Bapangi"
+          src="https://www.google.com/maps?q=Bapangi,+Kec.+Panca+Lautang,+Kabupaten+Sidenreng+Rappang,+Sulawesi+Selatan&z=16&output=embed"
+          width="100%" height="100%" style="border:0; min-height:420px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="py-20 lg:py-28">
+  <div class="max-w-4xl mx-auto px-5 lg:px-8">
+    <div class="mb-10 text-center" data-aos="fade-up">
+      <span class="section-eyebrow text-xs font-bold tracking-[0.2em] uppercase">Butuh Bantuan?</span>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-green-800 dark:text-cream mt-3">Pertanyaan Umum</h2>
+      <div class="contour-rule w-24 mt-4 mx-auto"></div>
+    </div>
+
+    <div class="relative mb-8" data-aos="fade-up">
+      <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-ink-soft"></i>
+      <input id="faq-search" type="text" placeholder="Cari pertanyaan, mis. 'surat domisili'..." class="w-full pl-12 pr-5 py-4 rounded-full bg-surface border border-green-100 dark:border-green-800 text-ink placeholder:text-ink-soft focus:outline-none focus:ring-2 focus:ring-gold-500" />
+    </div>
+
+    <div class="space-y-3" id="faq-list"></div>
+    <p id="faq-empty" class="hidden text-center text-ink-soft text-sm py-8">Tidak ada pertanyaan yang cocok dengan pencarian Anda.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-green-900 text-white/80 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-11 h-11 rounded-full bg-white overflow-hidden flex items-center justify-center flex-shrink-0"><img src="assets/img/favicon.png" alt="Logo Kabupaten Sidenreng Rappang" class="w-full h-full object-contain p-1.5" /></div>
+        <p class="font-display font-bold text-white text-lg">Desa Bapangi</p>
+      </div>
+      <p class="text-sm leading-relaxed">Website resmi Desa Bapangi, Kecamatan Panca Lautang, Kabupaten Sidenreng Rappang, Sulawesi Selatan.</p>
+      <div class="flex gap-3 mt-5">
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-500 hover:text-green-900 transition"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-500 hover:text-green-900 transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-500 hover:text-green-900 transition"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-500 hover:text-green-900 transition"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-white font-bold mb-4 text-sm uppercase tracking-wide">Navigasi</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#profil" class="hover:text-gold-400">Profil Desa</a></li>
+        <li><a href="#pemerintahan" class="hover:text-gold-400">Pemerintahan</a></li>
+        <li><a href="#potensi" class="hover:text-gold-400">Potensi Desa</a></li>
+        <li><a href="#program" class="hover:text-gold-400">Program Desa</a></li>
+        <li><a href="#layanan" class="hover:text-gold-400">Layanan</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-white font-bold mb-4 text-sm uppercase tracking-wide">Informasi</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#faq" class="hover:text-gold-400">FAQ</a></li>
+        <li><a href="#kontak" class="hover:text-gold-400">Contact Center</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-white font-bold mb-4 text-sm uppercase tracking-wide">Alamat</p>
+      <p class="text-sm leading-relaxed">Kantor Desa Bapangi<br>Kec. Panca Lautang, Kab. Sidenreng Rappang<br>Sulawesi Selatan, Indonesia</p>
+      <p class="text-sm mt-3"><i class="fa-solid fa-envelope mr-2"></i>desabapangi@sidrapkab.go.id</p>
+      <p class="text-sm mt-1"><i class="fa-brands fa-whatsapp mr-2"></i>+62 899-891-3642</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-12 pt-6 border-t border-white/10 text-center text-xs text-white/50">
+    <p>© <span id="current-year"></span> Pemerintah Desa Bapangi. Seluruh hak cipta dilindungi. Konten pada situs ini merupakan data contoh untuk keperluan demonstrasi.</p>
+  </div>
+</footer>
+
+<!-- Floating buttons -->
+<!-- Widget Chat Cepat WhatsApp -->
+<div id="wa-widget" class="fixed right-5 bottom-5 z-40 flex flex-col items-end gap-3">
+  <div id="wa-panel" class="hidden w-[300px] max-w-[85vw] bg-surface rounded-xl2 shadow-soft overflow-hidden border border-green-100 dark:border-green-800">
+    <div class="bg-green-700 px-4 py-3.5 flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+        <img src="assets/img/favicon.png" alt="Logo Kabupaten Sidenreng Rappang" class="w-full h-full object-contain p-1" />
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-white font-bold text-sm leading-tight">Desa Bapangi</p>
+        <p class="text-white/70 text-[11px] leading-tight"><span class="inline-block w-1.5 h-1.5 rounded-full bg-green-300 mr-1"></span>Biasanya membalas dalam beberapa jam</p>
+      </div>
+      <button id="wa-panel-close" aria-label="Tutup" class="text-white/70 hover:text-white w-7 h-7 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="p-4">
+      <div class="bg-green-50 dark:bg-green-800/60 text-ink text-sm rounded-xl2 rounded-tl-sm px-4 py-3 mb-4 leading-relaxed">
+        Halo! 👋 Ada yang bisa kami bantu? Pilih topik di bawah, atau tulis pesan sendiri.
+      </div>
+      <div class="flex flex-col gap-2">
+        <a href="https://wa.me/628998913642?text=Halo%2C%20saya%20ingin%20bertanya%20jam%20pelayanan%20Kantor%20Desa%20Bapangi." target="_blank" rel="noopener" class="quick-reply">
+          <i class="fa-regular fa-clock"></i> Jam pelayanan kantor desa
+        </a>
+        <a href="https://wa.me/628998913642?text=Halo%2C%20saya%20ingin%20bertanya%20persyaratan%20mengurus%20surat%20di%20Desa%20Bapangi." target="_blank" rel="noopener" class="quick-reply">
+          <i class="fa-regular fa-file-lines"></i> Cara mengurus surat
+        </a>
+        <a href="https://wa.me/628998913642?text=Halo%2C%20saya%20ingin%20menyampaikan%20aspirasi%2Fpengaduan%20untuk%20Desa%20Bapangi." target="_blank" rel="noopener" class="quick-reply">
+          <i class="fa-regular fa-comment-dots"></i> Sampaikan aspirasi/pengaduan
+        </a>
+        <a href="https://wa.me/628998913642?text=Halo%2C%20saya%20ingin%20bertanya%20seputar%20Desa%20Bapangi." target="_blank" rel="noopener" class="quick-reply">
+          <i class="fa-regular fa-message"></i> Pertanyaan lainnya
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <button id="wa-toggle" class="fab-wa" aria-label="Buka chat cepat WhatsApp" aria-expanded="false">
+    <i class="fa-brands fa-whatsapp icon-wa-open"></i>
+    <i class="fa-solid fa-xmark icon-wa-close hidden"></i>
+  </button>
+</div>
+<button id="back-to-top" class="fab-top" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
